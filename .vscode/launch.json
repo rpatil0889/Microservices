@@ -9,6 +9,16 @@
             "projectName": "Server-Registry",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserServicesApplication<User-Services>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.users.UserServicesApplication",
+            "projectName": "User-Services",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
