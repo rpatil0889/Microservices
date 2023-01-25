@@ -11,7 +11,6 @@ import com.users.entities.User;
 import com.users.entities.UserDTO;
 import com.users.exceptions.InvalidInputException;
 import com.users.exceptions.ResourceNotFoundException;
-import com.users.heplers.UserHelper;
 import com.users.repositories.UserRepo;
 
 @Service
