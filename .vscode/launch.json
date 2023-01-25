@@ -42,6 +42,16 @@
             "projectName": "Hotel-Services",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<API-Gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gateway.ApiGatewayApplication",
+            "projectName": "API-Gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
