@@ -19,7 +19,8 @@
             "mainClass": "com.users.UserServicesApplication",
             "projectName": "User-Services",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=64618 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=User-Services"
         },
         {
             "type": "java",
@@ -28,6 +29,17 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.ratings.RatingServicesApplication",
             "projectName": "Rating-Services",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=64611 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=Rating-Services"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HotelServicesApplication<Hotel-Services>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.hotels.HotelServicesApplication",
+            "projectName": "Hotel-Services",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

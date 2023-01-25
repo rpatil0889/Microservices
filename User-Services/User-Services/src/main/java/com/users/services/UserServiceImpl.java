@@ -11,15 +11,17 @@ import com.users.entities.User;
 import com.users.entities.UserDTO;
 import com.users.exceptions.InvalidInputException;
 import com.users.exceptions.ResourceNotFoundException;
+import com.users.heplers.UserHelper;
 import com.users.repositories.UserRepo;
 
 @Service
 public class UserServiceImpl implements UserService{
 	@Autowired
-	UserRepo userRepo;
+	private UserRepo userRepo;
 	
 	@Autowired
-	Conversion conversion;
+	private Conversion conversion;
+
 
 	@Override
 	public UserDTO createUser(UserDTO userDTO) {
@@ -41,9 +43,7 @@ public class UserServiceImpl implements UserService{
 			throw new InvalidInputException("User is alredy registered with mobile: "+userDTO.getMobile());
 			
 		}
-		
-		User u = conversion.userDTOToEntity(userDTO);
-		User user = userRepo.save(u);
+		User user = userRepo.save(conversion.userDTOToEntity(userDTO));
 		
 		return conversion.entityToDTO(user);
 	}
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
 		if (user==null) {
 			throw new ResourceNotFoundException("User not found with id: "+id);
 		}
-		
+
 		return conversion.entityToDTO(user);
 	}
 

@@ -3,14 +3,21 @@ package com.hotels.config;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hotels.entities.Hotel;
 import com.hotels.entities.HotelDTO;
+import com.hotels.entities.RatingDTO;
+import com.hotels.external.RatingServices;
 
 @Component
 public class ConversionImpl implements Conversion{
 
+	@Autowired
+	RatingServices ratingServices;
+
+	
 	@Override
 	public HotelDTO entityToDto(Hotel hotel) {
 		HotelDTO dto = new HotelDTO();
@@ -20,6 +27,15 @@ public class ConversionImpl implements Conversion{
 		dto.setCity(hotel.getHotelCity());
 		dto.setState(hotel.getHotelState());
 		dto.setDescription(hotel.getHotelDescription());
+
+		List<RatingDTO> rd = ratingServices.geRatingDTO(hotel.getHotelId());       
+        dto.setRatings(rd);
+
+        double overAllRatings = 0.0;
+        for (RatingDTO ratingDTO : rd) {
+           overAllRatings += ratingDTO.getRatings();
+        }
+        dto.setOverAllRtaings(overAllRatings);
 		
 		return dto;
 	}

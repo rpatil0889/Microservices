@@ -16,9 +16,9 @@ import com.hotels.repositories.HotelRepo;
 public class HotelServiceImpl implements HotelService {
 
 	@Autowired
-	HotelRepo hotelRepo;
+	private HotelRepo hotelRepo;
 	@Autowired
-	Conversion conversion;
+	private Conversion conversion;
 
 	@Override
 	public HotelDTO createHotel(HotelDTO hotelDTO) {
@@ -35,7 +35,7 @@ public class HotelServiceImpl implements HotelService {
 		if (hotel == null) {
 			throw new ResourceNotFoundException("Hotel not found with id: " + id);
 		}
-
+		
 		return conversion.entityToDto(hotel);
 	}
 

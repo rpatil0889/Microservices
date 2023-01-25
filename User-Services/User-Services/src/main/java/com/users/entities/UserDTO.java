@@ -1,5 +1,7 @@
 package com.users.entities;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -12,4 +14,6 @@ public class UserDTO {
 	private String city;
 	private String state;
 	private String about;
+
+	private List<RatingDTO> ratings;
 }

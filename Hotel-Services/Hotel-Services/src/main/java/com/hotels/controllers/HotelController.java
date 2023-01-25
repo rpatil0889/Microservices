@@ -34,12 +34,12 @@ public class HotelController {
 		return ResponseEntity.ok(hotelService.getHotelById(id));
 	}
 	
-	@GetMapping(path = "/name/{id}")
+	@GetMapping(path = "/name/{name}")
 	public ResponseEntity<List<HotelDTO>> getHotelByNames(@PathVariable String name) {
 		return ResponseEntity.ok(hotelService.getHotelsByName(name));
 	}
 	
-	@GetMapping(path = "/city/{id}")
+	@GetMapping(path = "/city/{city}")
 	public ResponseEntity<List<HotelDTO>> getHotelsByCity(@PathVariable String city) {
 		return ResponseEntity.ok(hotelService.getHotelsByCity(city));
 	}

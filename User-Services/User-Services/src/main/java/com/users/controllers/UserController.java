@@ -29,7 +29,7 @@ public class UserController {
 		return ResponseEntity.ok(userService.createUser(userDTO));
 	}
 	
-	@GetMapping(path = "/id/{id}")
+	@GetMapping(path = "/{id}")
 	ResponseEntity<UserDTO> getUser(@PathVariable String id){
 		
 		return ResponseEntity.ok(userService.getUser(id));
