@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SecurityServiceApplication",
+            "request": "launch",
+            "mainClass": "com.security.SecurityServiceApplication",
+            "projectName": "Security-Service"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ServerRegistryApplication<Server-Registry>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
